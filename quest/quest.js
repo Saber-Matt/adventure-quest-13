@@ -5,8 +5,9 @@ import createChoice from './create-choice.js';
 import findById from '../common/find-by-id.js';
 import scoreQuest from './score-quest.js';
 
-loadProfile(); // gets user from local storage and adds it to the header
 
+loadProfile(); // gets user from local storage and adds it to the header
+const section = document.querySelector('section');
 // go grab the query parameter from the URL
 const searchParams = new URLSearchParams(window.location.search);
 // go get the quest id from the URL
@@ -18,32 +19,35 @@ const quest = findById(quests, questId);
 if (!quest) {
     window.location = '../map';
 }
-
-const title = document.getElementById('title');
-const image = document.getElementById('image');
-const audio = document.getElementById('audio');
-const description = document.getElementById('description');
-const choiceForm = document.getElementById('choice-form');
-const choices = document.getElementById('choices');
-const result = document.getElementById('result');
-const resultDescription = document.getElementById('result-description');
+const button = document.createElement('button');
+const title = document.createElement('h1');
+const image = document.createElement('img');
+const description = document.createElement('span');
+const choiceForm = document.createElement('form');
+//const choices = document.createElement('choices');
+const result = document.createElement('result');
+const resultDescription = document.createElement('result-description');
 
 // use the quest that we found to populate the dom
 title.textContent = quest.title;
+button.textContent = 'submit';
 image.src = '../assets/quests/' + quest.image;
-audio.src = '../assets/quests/' + quest.audio;
 description.textContent = quest.description;
 
 // for each of the quest's choices
-for (let index = 0; index < quest.choices.length; index++) {
-    const choice = quest.choices[index];
-    // go make a choice dom element
-    const choiceDOM = createChoice(choice);
-    // and append that choice
-    choices.appendChild(choiceDOM);
+for (let index of quest.choices) {
+    const label = document.createElement('label');
+    const radioButton = document.createElement('input');
+    radioButton.type = 'radio';
+    radioButton.name = 'choice';
+    radioButton.value = index.id;
+    label.append(index.description, radioButton);
+    choiceForm.append(label);
+    choiceForm.append(button);
+
 }
 
-choiceForm.addEventListener('submit', function (event) {
+choiceForm.addEventListener('submit', (event) => {
     event.preventDefault();
 
     // get user choice
@@ -62,7 +66,6 @@ choiceForm.addEventListener('submit', function (event) {
     saveUser(user);
 
     // update UI
-    audio.src = '../assets/quests/' + quest.action;
     choiceForm.classList.add('hidden');
     result.classList.remove('hidden');
     resultDescription.textContent = choice.result;
@@ -70,3 +73,4 @@ choiceForm.addEventListener('submit', function (event) {
     loadProfile();
 
 });
+section.append(title, image, description, choiceForm);

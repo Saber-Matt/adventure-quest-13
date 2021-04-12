@@ -85,7 +85,6 @@ const tRex = {
     },
     prerequisites: ['plane-wreck', 'dino-egg'],
     image: '.png',
-    audio: 'tRex-roar.wav',
     action: 'some-action.wav',
     description: `
     INSERT CREATIVE DESCRIPTION
