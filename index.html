@@ -10,9 +10,6 @@
 
 <body>
     <header>
-        <div class="gutter-right logo">
-            <img src="assets/big-logo.png" />
-        </div>
     </header>
     <main>
         <section class="main-section">
@@ -24,30 +21,31 @@
                 hp:<span id="hp"></span>
                 supplies: <span id="supplies"></span>
             </div>
-            </header>
 
-            <main>
-                <h2 id="title"></h2>
-                <p>
-                    <img id="image">
+            <h2 id="title"></h2>
+            <p>
+                <img id="image">
 
-                </p>
-                <p id="description"></p>
-                <form id="choice-form">
-                    <p id="choices"></p>
-                    <button>Choose</button>
-                </form>
-                <section id="result" class="hidden">
-                    <p id="result-description"></p>
-                    <a href="../map">Back to Map</a>
-                </section>
+            </p>
+            <p id="description"></p>
+            <form id="choice-form">
+                <label>Enter your Hero's Name
+                    <input class="user-name">
+                </label>
+                a
+                <p id="choices"></p>
+                <button class="start-button">Choose</button>
+            </form>
+            <section id="result" class="hidden">
+                <p id="result-description"></p>
+                <a href="../map">Back to Map</a>
+            </section>
 
-            </main>
+
             <footer>
-                <div class="copy gutter-right">&copy; 2020 Alchemy Code Lab</div>
             </footer>
 
-            <script type="module" src="app.js"></script>
+            <script type="module" src="home/home.js"></script>
 </body>
 
 </html>

@@ -93,21 +93,21 @@ const tRex = {
     choices: [{
         id: 'Run',
         description: 'Because what else are your going to do, right?',
-        result: 'You succeed in escaping! You escape right into the loving talons of the raptor pack thats been hunting you. Its a win-win dino-eat-human senario.',
+        result: 'You succeed in escaping! You escape right into the loving talons of the raptor pack thats been hunting you. Its a win-win dino-eat-human scenario.',
         hp: 0,
-        gold: 40
+        supplies: 40
     }, {
         id: 'Stand Perfectly Still',
         description: 'It worked in the movies, right?',
         result: 'It did work in the movies. But they were actors, and you are low on supplies. Eventually your resolve gives out and you become dino food.',
         hp: -50,
-        gold: 0
+        supplies: 0
     }, {
         id: 'Scream',
         description: 'Let the whole Dino World hear you',
         result: 'Surprisingly, this works! Your cries attract other hungry carnivours, allowing you to escape in the battle royal. ',
         hp: 35,
-        gold: 0
+        supplies: 0
     }]
 };
 

@@ -3,7 +3,7 @@ import quests from '../data/quest-data.js';
 import loadProfile from '../common/load-profile.js';
 import createQuestLink from './create-quest-link.js';
 import createCompletedQuest from './create-completed-quest.js';
-import hasCompletedAllQuests from './has-completed-all-quests.js';
+import completedAllQuests from './completed-all-quests.js';
 import isDead from '../common/is-dead.js';
 
 loadProfile(); // i predict we'll load the header on every page but the home page
@@ -12,7 +12,7 @@ loadProfile(); // i predict we'll load the header on every page but the home pag
 const user = getUser();
 
 // if they're dead, or if they've completed all the quests
-if (isDead(user) || hasCompletedAllQuests(quests, user)) {
+if (isDead(user) || completedAllQuests(quests, user)) {
     // send them to the results page
     window.location = '../results';
 }
