@@ -10,7 +10,7 @@ const planeWreck = {
     INSERT CREATIVE DESCRIPTION
     `,
     choices: [{
-        id: 'explore',
+        id: 'explore: ',
         description: 'Explore the wreckage',
         result: `
             INSERT CREATIVE RESULT. 
@@ -18,7 +18,7 @@ const planeWreck = {
         hp: 0,
         supplies: 35
     }, {
-        id: 'cry loudly',
+        id: 'Cry loudly: ',
         description: 'INSERT CREATIVE DESCRIPTION',
         result: `
         INSERT CREATIVE RESULT.
@@ -26,7 +26,7 @@ const planeWreck = {
         hp: -30,
         supplies: 50
     }, {
-        id: 'run',
+        id: 'Run: ',
         description: 'INSERT CREATIVE DESCRIPTION',
         result: `
         INSERT CREATIVE RESULT.
@@ -50,29 +50,29 @@ const DinoEggs = {
     INSERT CREATIVE DESCRIPTION
     `,
     choices: [{
-        id: 'examine them more closely',
+        id: 'Examine them more closely: ',
         description: 'INSERT CREATIVE DESCRIPTION',
         result: `
         INSERT CREATIVE RESULT. 
         `,
-        hp: -35,
-        supplies: 15
-    }, {
-        id: 'leave them alone',
-        description: 'INSERT CREATIVE DESCRIPTION',
-        result: `
-        INSERT CREATIVE RESULT.
-        `,
-        hp: -45,
+        hp: -100,
         supplies: 0
     }, {
-        id: 'take the eggs',
-        description: 'INSERT CREATIVE DESCRIPTION',
+        id: 'Leave them alone: ',
+        description: 'You\'re already stranded on on an island with a bunch of bio-death machines, why tempt fate?',
         result: `
-        INSERT CREATIVE RESULT.
+        Fate smiles down on you, maybe you will survive after all.
         `,
-        hp: 0,
-        supplies: 90
+        hp: 10,
+        supplies: 0
+    }, {
+        id: 'Take the eggs: ',
+        description: 'Because its not kidnapping if they haven\'t hatched yet',
+        result: `
+        You narrowly escape the raptor pack on their way back to the nest. Hopefully the babies imprint on you because their parents are now hunting you- FOREVER.
+        `,
+        hp: 15,
+        supplies: 35
     }]
 };
 
@@ -87,26 +87,26 @@ const tRex = {
     image: '.png',
     action: 'some-action.wav',
     description: `
-    INSERT CREATIVE DESCRIPTION
+    Congratulations! You\'ve encountered an Hungry T-Rex
     `,
     choices: [{
-        id: 'Run',
+        id: 'Run: ',
         description: 'Because what else are your going to do, right?',
         result: 'You succeed in escaping! You escape right into the loving talons of the raptor pack thats been hunting you. Its a win-win dino-eat-human scenario.',
-        hp: 0,
-        supplies: 40
+        hp: -100,
+        supplies: 0
     }, {
-        id: 'Stand Perfectly Still',
+        id: 'Stand Perfectly Still: ',
         description: 'It worked in the movies, right?',
         result: 'It did work in the movies. But they were actors, and you are low on supplies. Eventually your resolve gives out and you become dino food.',
-        hp: -50,
+        hp: -100,
         supplies: 0
     }, {
-        id: 'Scream',
+        id: 'Scream: ',
         description: 'Let the whole Dino World hear you',
         result: 'Surprisingly, this works! Your cries attract other hungry carnivours, allowing you to escape in the battle royal. ',
-        hp: 35,
-        supplies: 0
+        hp: 10,
+        supplies: 15
     }]
 };
 

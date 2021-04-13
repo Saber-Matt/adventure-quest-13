@@ -27,12 +27,16 @@ const choiceForm = document.createElement('form');
 //const choices = document.createElement('choices');
 const result = document.createElement('result');
 const resultDescription = document.createElement('result-description');
+const hp = document.createElement('hp');
+const supplies = document.createElement('supplies');
+
 
 // use the quest that we found to populate the dom
 title.textContent = quest.title;
 button.textContent = 'submit';
 image.src = '../assets/quests/' + quest.image;
 description.textContent = quest.description;
+
 
 // for each of the quest's choices
 for (let index of quest.choices) {
@@ -41,9 +45,10 @@ for (let index of quest.choices) {
     radioButton.type = 'radio';
     radioButton.name = 'choice';
     radioButton.value = index.id;
-    label.append(index.description, radioButton);
+    label.append(index.id, index.description, radioButton, hp, supplies);
     choiceForm.append(label);
     choiceForm.append(button);
+
 
 }
 
@@ -73,4 +78,4 @@ choiceForm.addEventListener('submit', (event) => {
     loadProfile();
 
 });
-section.append(title, image, description, choiceForm);
+section.append(title, image, description, choiceForm, resultDescription);

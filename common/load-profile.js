@@ -19,7 +19,7 @@ function loadProfile() {
 
     // copy data from object to DOM properties:
     name.textContent = user.name;
-    avatar.src = '../assets/avatars/' + user.race + '.png';
+    avatar.src = '../assets/avatars/' + user.race + '.jpeg';
     supplies.textContent = user.supplies;
 
     // if they're dead, say so in the header
